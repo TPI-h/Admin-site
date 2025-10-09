@@ -223,13 +223,18 @@ const RoomsManager = () => {
                 </div>
               </div>
               <div>
-                <Label htmlFor="name">Name *</Label>
-                <Input
-                  id="name"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  required
-                />
+                <Label htmlFor="name">Room Category *</Label>
+                <Select value={formData.name} onValueChange={(value) => setFormData({ ...formData, name: value })}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select room category" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Executive">Executive</SelectItem>
+                    <SelectItem value="Suite">Suite</SelectItem>
+                    <SelectItem value="Mini Suite">Mini Suite</SelectItem>
+                    <SelectItem value="Non AC">Non AC</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <div>
                 <Label htmlFor="description">Description</Label>
@@ -318,7 +323,7 @@ const RoomsManager = () => {
           <Card key={room.id}>
             <CardHeader>
               <CardTitle className="flex justify-between items-center">
-                {room.name}
+                {room.name} Room
                 <div className="flex gap-2">
                   <Button
                     variant="outline"
@@ -340,6 +345,7 @@ const RoomsManager = () => {
             <CardContent>
               <div className="space-y-2">
                 <p><strong>Hotel:</strong> {HOTEL_NAME}</p>
+                <p><strong>Room Type:</strong> {room.name}</p>
                 {room.description && (
                   <p className="text-muted-foreground">{room.description}</p>
                 )}
