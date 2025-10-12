@@ -232,7 +232,6 @@ const RoomsManager = () => {
                     <SelectItem value="Executive">Executive</SelectItem>
                     <SelectItem value="Suite">Suite</SelectItem>
                     <SelectItem value="Mini Suite">Mini Suite</SelectItem>
-                    <SelectItem value="Non AC">Non AC</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
